@@ -137,3 +137,9 @@ services:
             - '@akeneo_elasticsearch.client.product_and_product_model'
         tags:
             - { name: kernel.event_subscriber }
+
+    # todo merge 3.1: remove the following service
+    pim_catalog.event_listener.doctrine.remove_user:
+        class: 'Akeneo\Pim\Enrichment\Bundle\Doctrine\ORM\EventListener\RemoveUserListener'
+        tags:
+            - { name: doctrine.event_listener, event: preRemove }
