@@ -76,8 +76,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['sku', 'description'])->willReturn([
-            new Attribute('sku', AttributeTypes::IDENTIFIER),
-            new Attribute('description', AttributeTypes::TEXTAREA)
+            new Attribute('sku', AttributeTypes::IDENTIFIER, []),
+            new Attribute('description', AttributeTypes::TEXTAREA, [])
         ]);
 
         $valuesIndexedByType = [
@@ -90,6 +90,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                                 '<all_locales>' => 'foo'
                             ],
                         ],
+                        'properties' => [],
                     ]
                 ]
             ],
@@ -107,6 +108,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
 
                             ],
                         ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -205,7 +207,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['unknown_attribute', 'color'])->willReturn([
-            new Attribute('color', AttributeTypes::OPTION_SIMPLE_SELECT),
+            new Attribute('color', AttributeTypes::OPTION_SIMPLE_SELECT, []),
         ]);
 
         $typesToCode = [
@@ -217,7 +219,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => 'red'
                             ]
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -253,7 +256,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['color'])->willReturn([
-            new Attribute('color', AttributeTypes::OPTION_SIMPLE_SELECT),
+            new Attribute('color', AttributeTypes::OPTION_SIMPLE_SELECT, []),
         ]);
 
         $rawValueCollectionIndexedByType = [
@@ -266,6 +269,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                                 '<all_locales>' => 'red'
                             ],
                         ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -283,6 +287,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                                 '<all_locales>' => ''
                             ],
                         ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -311,7 +316,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['color'])->willReturn([
-           new Attribute('color', AttributeTypes::OPTION_MULTI_SELECT),
+           new Attribute('color', AttributeTypes::OPTION_MULTI_SELECT, []),
         ]);
 
         $typesToCode = [
@@ -323,7 +328,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => 'red'
                             ],
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -363,7 +369,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['image'])->willReturn([
-            new Attribute('image', AttributeTypes::IMAGE),
+            new Attribute('image', AttributeTypes::IMAGE, []),
         ]);
 
         $typesToCode = [
@@ -375,7 +381,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => 'my_image'
                             ],
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -419,7 +426,7 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['image'])->willReturn([
-            new Attribute('image', AttributeTypes::IMAGE),
+            new Attribute('image', AttributeTypes::IMAGE, []),
         ]);
 
         $typesToCode = [
@@ -431,7 +438,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => 'empty_image'
                             ],
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ]
@@ -495,9 +503,9 @@ class ValueCollectionFactorySpec extends ObjectBehavior
         ];
 
         $getAttributeByCodes->forCodes(['number', 'text', 'yes_no'])->willReturn([
-            new Attribute('number', AttributeTypes::NUMBER),
-            new Attribute('text', AttributeTypes::TEXTAREA),
-            new Attribute('yes_no', AttributeTypes::BOOLEAN),
+            new Attribute('number', AttributeTypes::NUMBER, []),
+            new Attribute('text', AttributeTypes::TEXTAREA, []),
+            new Attribute('yes_no', AttributeTypes::BOOLEAN, []),
         ]);
 
         $typesToCode = [
@@ -509,7 +517,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => 0.0,
                             ],
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ],
@@ -521,7 +530,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => '0',
                             ],
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ],
@@ -533,7 +543,8 @@ class ValueCollectionFactorySpec extends ObjectBehavior
                             '<all_channels>' => [
                                 '<all_locales>' => false,
                             ],
-                        ]
+                        ],
+                        'properties' => [],
                     ]
                 ]
             ]
