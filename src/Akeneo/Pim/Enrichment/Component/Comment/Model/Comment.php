@@ -89,7 +89,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
-    public function setAuthor(UserInterface $author)
+    public function setAuthor(?UserInterface $author)
     {
         $this->author = $author;
 

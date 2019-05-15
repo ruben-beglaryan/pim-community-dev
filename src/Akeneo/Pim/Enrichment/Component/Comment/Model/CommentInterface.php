@@ -45,11 +45,11 @@ interface CommentInterface
     public function getResourceName();
 
     /**
-     * @param UserInterface $author
+     * @param UserInterface|null $author
      *
      * @return CommentInterface
      */
-    public function setAuthor(UserInterface $author);
+    public function setAuthor(?UserInterface $author);
 
     /**
      * @return UserInterface
